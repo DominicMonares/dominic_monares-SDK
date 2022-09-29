@@ -12,7 +12,7 @@ You will need to create an account with [The One API](https://the-one-api.dev/) 
 
 Once initialized, you can use all methods through `theOne` object.
 ```
-import theOne from 'dominic_monares-SDK';
+import theOne from 'dominicmonares-SDK';
 
 const api = theOne(TOKEN);
 
