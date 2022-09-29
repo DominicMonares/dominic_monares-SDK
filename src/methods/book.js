@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const getBooks = (client, id) => {
   const url = id ? `/book/${id}` : '/book';
   return client.get(url)
