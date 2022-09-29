@@ -16,23 +16,23 @@ const theOne = (token) => {
   });
 
   return {
-    books: () => book.getBooks(client),
-    book: (id) => book.getBooks(client, id),
-    bookChapters: (id) => book.getBookChapters(client, id),
+    books: (params) => book.getBooks(client, null, params),
+    book: (id, params) => book.getBooks(client, id, params),
+    bookChapters: (id, params) => book.getBookChapters(client, id, params),
 
-    movies: () => movie.getMovies(client),
-    movie: (id) => movie.getMovies(client, id),
-    movieQuotes: (id) => movie.getMovieQuotes(client, id),
+    movies: (params) => movie.getMovies(client, null, params),
+    movie: (id, params) => movie.getMovies(client, id, params),
+    movieQuotes: (id, params) => movie.getMovieQuotes(client, id, params),
 
-    characters: () => character.getCharacters(client),
-    character: (id) => character.getCharacters(client, id),
-    characterQuotes: (id) => character.getCharacterQuotes(client, id),
+    characters: (params) => character.getCharacters(client, null, params),
+    character: (id, params) => character.getCharacters(client, id, params),
+    characterQuotes: (id, params) => character.getCharacterQuotes(client, id, params),
 
-    quotes: () => quote.getQuotes(client),
-    quote: (id) => quote.getQuotes(client, id),
+    quotes: (params) => quote.getQuotes(client, null, params),
+    quote: (id, params) => quote.getQuotes(client, id, params),
 
-    chapters: () => chapter.getChapters(client),
-    chapter: (id) => chapter.getChapter(client, id)
+    chapters: (params) => chapter.getChapters(client, null, params),
+    chapter: (id, params) => chapter.getChapters(client, id, params)
   };
 };
 
