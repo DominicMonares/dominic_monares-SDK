@@ -6,15 +6,12 @@ const createURL = (endpoint, id) => {
   }
 }
 
+let queryParams = '';
 const createParams = (params) => {
-  let queryParams = '';
   for (const p in params) {
     const paramVal = params[p];
-
-    if (paramVal.criteria) {
-      const criteria = paramVal.criteria;
-      const value = paramVal.value;
-    }
+    const criteria = paramVal.criteria;
+    const value = paramVal.value;
 
     if (!queryParams) addToQuery('?');
     if (queryParams.length > 1) addToQuery('&');
@@ -46,7 +43,7 @@ const createParams = (params) => {
 }
 
 const addToQuery = (newParam) => {
-  queryParams.concat(newParam);
+  queryParams += newParam;
 }
 
 export { createURL, createParams };
