@@ -1,5 +1,5 @@
 {
-  "name": "dominic_monares-sdk",
+  "name": "dominicmonares-sdk",
   "version": "1.0.0",
   "description": "The Lord of the Rings SDK",
   "main": "src/index.js",
