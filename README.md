@@ -3,7 +3,7 @@ This SDK utilizes [The One API](https://the-one-api.dev/) and provides methods f
 
 ## Installation
 ```
-npm install dominic_monares-sdk
+npm install dominicmonares-sdk
 ```
 
 You will need to create an account with [The One API](https://the-one-api.dev/) in order to receive an API key. The API key must be stored in your .env file as TOKEN.
