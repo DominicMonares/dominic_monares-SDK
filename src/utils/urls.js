@@ -20,14 +20,14 @@ const createParams = (params) => {
       addToQuery(`${p}=${paramVal}`);
     } else if (p === 'asc' || p === 'desc') {
       addToQuery(`sort=${paramVal}:${p}`);
-    } else if (p === 'match' || p === 'include') {
+    } else if (p === 'match' || p === 'include' || p === 'regex') {
       addToQuery(`${criteria}=${value}`);
-    } else if (p === 'negateMatch' || p === 'exclude' || p === 'regex' || p === 'negateRegex') {
+    } else if (p === 'negateMatch' || p === 'exclude' || p === 'negateRegex') {
       addToQuery(`${criteria}!=${value}`);
     } else if (p === 'exists') {
-      addToQuery(`${criteria}?${value}`);
+      addToQuery(paramVal);
     } else if (p === 'doesntExist') {
-      addToQuery(`${criteria}?!${value}`);
+      addToQuery(`!${paramVal}`);
     } else if (p === 'lessThan') {
       addToQuery(`${criteria}<${value}`);
     } else if (p === 'lessEqual') {
