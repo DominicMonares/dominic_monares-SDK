@@ -1,0 +1,32 @@
+{
+  "name": "dominic_monares-sdk",
+  "version": "1.0.0",
+  "description": "The Lord of the Rings SDK",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DominicMonares/dominic_monares-SDK.git"
+  },
+  "author": "Dominic Monares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DominicMonares/dominic_monares-SDK/issues"
+  },
+  "homepage": "https://github.com/DominicMonares/dominic_monares-SDK#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "jest": "^29.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "files": [
+    "dist/index.js"
+  ]
+}
