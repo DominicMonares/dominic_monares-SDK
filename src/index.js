@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-import * from '../config/urls';
-import * from './methods/book';
-import * from './methods/chapter';
-import * from './methods/character';
-import * from './methods/movie';
-import * from './methods/quote';
+import { baseURL } from '../config/urls';
+import * as book from './methods/book';
+import * as movie from './methods/movie';
+import * as character from './methods/character';
+import * as quote from './methods/quote';
+import * as chapter from './methods/chapter';
 
 const theOne = (token) => {
   const client = axios.create({
@@ -13,28 +13,26 @@ const theOne = (token) => {
     headers: {
       Authorization: `Bearer ${token}`
     }
-  })
-    .then(res => res)
-    .catch(err => { throw `Error creating API instance: ${err}` });
+  });
 
   return {
-    books: () => await getBooks(client),
-    book: (id) => await getBooks(client, id),
-    bookChapters: (id) => await getBookChapters(client, id),
+    books: () => book.getBooks(client),
+    book: (id) => book.getBooks(client, id),
+    bookChapters: (id) => book.getBookChapters(client, id),
 
-    movies: () => await getMovies(client),
-    movie: (id) => await getMovies(client, id),
-    movieQuotes: (id) => await getMovieQuotes(client, id),
+    movies: () => movie.getMovies(client),
+    movie: (id) => movie.getMovies(client, id),
+    movieQuotes: (id) => movie.getMovieQuotes(client, id),
 
-    characters: () => await getCharacters(client),
-    character: (id) => await getCharacters(client, id),
-    characterQuotes: (id) => await getCharacterQuotes(client, id),
+    characters: () => character.getCharacters(client),
+    character: (id) => character.getCharacters(client, id),
+    characterQuotes: (id) => character.getCharacterQuotes(client, id),
 
-    quotes: () => await getQuotes(client),
-    quote: (id) => await getQuotes(client, id),
+    quotes: () => quote.getQuotes(client),
+    quote: (id) => quote.getQuotes(client, id),
 
-    chapters: () => await getChapters(client),
-    chapter: (id) => await getChapter(client, id)
+    chapters: () => chapter.getChapters(client),
+    chapter: (id) => chapter.getChapter(client, id)
   };
 };
 
