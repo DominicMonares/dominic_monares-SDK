@@ -1,12 +1,17 @@
-const getCharacters = (client, id) => {
-  const url = id ? `/character/${id}` : '/character';
-  return client.get(url)
+import { createURL, createParams } from '../utils/urls';
+
+const getCharacters = (client, id, params) => {
+  const url = createURL('character', id);
+  const queryParams = params ? createParams(params) : '';
+  return client.get(url + queryParams)
     .then(res => res)
     .catch(err => { throw err });
 }
 
-const getCharacterQuotes = (client, id) => {
-  return client.get(`/character/${id}/quote`)
+const getCharacterQuotes = (client, id, params) => {
+  const url = `/character/${id}/quote`;
+  const queryParams = params ? createParams(params) : '';
+  return client.get(url + queryParams)
     .then(res => res)
     .catch(err => { throw err });
 }
