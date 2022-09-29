@@ -71,7 +71,6 @@ describe('Character methods', () => {
   it('should return all quotes from a specific character', async () => {
     const characterQuotes = await api.characterQuotes('5cd99d4bde30eff6ebccfea4');
     const docs = characterQuotes.data.docs;
-    console.log('CHARQUOTES ', docs, characterQuotes.data.total);
     expect(characterQuotes.data.total).toBe(41);
     expect(docs[3]['dialog']).toBe('Save your pity and your mercy. I have no use for it!');
   });
