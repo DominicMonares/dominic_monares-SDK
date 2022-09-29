@@ -7,7 +7,7 @@ dotenv.config();
 
 const api = theOne(process.env.TOKEN);
 
-xdescribe('Book methods', () => {
+describe('Book methods', () => {
   it('should return a list of all LotR books if no id provided', async () => {
     const books = await api.books();
     const masterpieces = ['The Fellowship Of The Ring', 'The Two Towers', 'The Return Of The King'];
@@ -29,7 +29,7 @@ xdescribe('Book methods', () => {
   });
 });
 
-xdescribe('Movie methods', () => {
+describe('Movie methods', () => {
   it('should return a list of all LotR and Hobbit movies if no id provided', async () => {
     const movies = await api.movies();
     const docs = movies.data.docs;
@@ -53,7 +53,7 @@ xdescribe('Movie methods', () => {
   });
 });
 
-xdescribe('Character methods', () => {
+describe('Character methods', () => {
   it('should return a list of all characters with metadata', async () => {
     const characters = await api.characters();
     const docs = characters.data.docs;
@@ -77,7 +77,7 @@ xdescribe('Character methods', () => {
   });
 });
 
-xdescribe('Quote methods', () => {
+describe('Quote methods', () => {
   it('should return a list of all movie quotes if no id provided', async () => {
     const quotes = await api.quotes();
     const docs = quotes.data.docs;
@@ -93,7 +93,7 @@ xdescribe('Quote methods', () => {
   });
 });
 
-xdescribe('Chapter methods', () => {
+describe('Chapter methods', () => {
   it('should return a list of all book chapters if no id provided', async () => {
     const chapters = await api.chapters();
     const docs = chapters.data.docs;
